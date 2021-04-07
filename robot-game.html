@@ -1,0 +1,52 @@
+<button onclick="moveLeft(); drawMap()" >◅</button>
+<span id="gameMap"></span>
+<button onclick="moveRight(); drawMap()">▻</button>
+
+<script>
+
+ const LEN   = 50
+ let rx      = 10
+ 
+ 
+
+ function drawMap()
+ {
+     gameMap.innerHTML = " "
+     for( let x = 1 ; x <= LEN ; x++)
+ {       
+         if(x == rx){
+             gameMap.innerHTML += " ▶"
+         }else {
+             gameMap.innerHTML += "┄"
+             }
+                }  
+     
+}  
+ 
+
+ function moveLeft(){
+     
+      
+    if(rx > 1){ 
+        	rx-- 
+        }else{
+        	alert("The limit is exceeded");
+        }       
+       
+    }
+ 
+ 
+
+ function moveRight(){
+    
+    if(rx < LEN){ 
+        	rx++ 
+    	}else{
+    		alert("The limit is exceeded");
+    	}
+	}
+ 
+ 
+ drawMap()
+
+</script>
